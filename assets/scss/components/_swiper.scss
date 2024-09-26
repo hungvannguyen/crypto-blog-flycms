@@ -1,0 +1,24 @@
+.swiper {
+  @apply w-full h-full;
+
+  &-slide {
+    a{
+      @apply flex flex-col md:flex-row gap-6 py-12 px-1;
+    }
+
+    img {
+      @apply block w-full h-full object-cover;
+    }
+  }
+}
+
+.custom{
+  &-bullet{
+    @apply inline-block w-[30px] h-[5px] bg-septenary mx-2 rounded-full dark:bg-fifteen;
+
+    &-active{
+      @apply bg-secondary dark:bg-quinary;
+    }
+  }
+}
+

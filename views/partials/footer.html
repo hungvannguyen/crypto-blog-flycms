@@ -1,0 +1,153 @@
+<!-- Footer -->
+<footer>
+	<div class="footer-container">
+		<div class="footer-top">
+			<div class="footer-logo">
+				<a href="/">
+					<img src="/images/logo.png" alt="Logo">
+				</a>
+			</div>
+
+			<div class="footer-social">
+
+				<svg class="footer-social-icon" fill="currentColor" width="800px" height="800px" viewBox="0 0 32 32" id="Camada_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+</style><path class="st0" d="M12.6,16.1v11.6c0,0.2,0.1,0.3,0.3,0.3h4.6c0.2,0,0.3-0.1,0.3-0.3V15.9h3.4c0.2,0,0.3-0.1,0.3-0.3l0.3-3.6  c0-0.2-0.1-0.3-0.3-0.3h-3.7V9.2c0-0.6,0.5-1.1,1.2-1.1h2.6C21.9,8.1,22,8,22,7.8V4.3C22,4.1,21.9,4,21.7,4h-4.4  c-2.6,0-4.7,1.9-4.7,4.3v3.4h-2.3c-0.2,0-0.3,0.1-0.3,0.3v3.6c0,0.2,0.1,0.3,0.3,0.3h2.3V16.1z"/></svg>
+
+				<svg class="footer-social-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+					<path d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z"></path>
+				</svg>
+
+				<svg class="footer-social-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+					<path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"></path>
+				</svg>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<!-- Item 1: About Us -->
+			<div class="footer-bottom-item" x-data="{ footerMenu: false, isMobile: (window.innerWidth < 768) }"
+							x-init="isMobile = (window.innerWidth < 768)"
+							x-on:resize.window="isMobile = (window.innerWidth < 768)">
+				<div @click="if (isMobile) { footerMenu = !footerMenu }">
+					<h3 >About us</h3>
+					<template x-if="isMobile && !footerMenu">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+					<template x-if="isMobile && footerMenu">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+				</div>
+				<ul x-show="!isMobile || footerMenu" @click.outside="if (isMobile) { footerMenu = false }" class="hidden md:block">
+					<li><a href="/category.html">About logo</a></li>
+					<li><a href="/category.html">Contact</a></li>
+					<li><a href="/category.html">Advertise</a></li>
+					<li><a href="/category.html">Recruitment</a></li>
+				</ul>
+			</div>
+
+			<!-- Item 2: Knowledge -->
+			<div class="footer-bottom-item" x-data="{ footerMenu: false, isMobile: (window.innerWidth < 768) }"
+							x-init="isMobile = (window.innerWidth < 768)"
+							x-on:resize.window="isMobile = (window.innerWidth < 768)">
+				<div @click="if (isMobile) { footerMenu = !footerMenu }">
+					<h3 >Knowledge</h3>
+					<template x-if="isMobile && !footerMenu">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+					<template x-if="isMobile && footerMenu">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+				</div>
+				<ul x-show="!isMobile || footerMenu" @click.outside="if (isMobile) { footerMenu = false }" class="hidden md:block">
+					<li><a href="/category.html">Crypto</a></li>
+					<li><a href="/category.html">Technical analysis</a></li>
+					<li><a href="/category.html">Invest</a></li>
+					<li><a href="/category.html">Project Review</a></li>
+				</ul>
+			</div>
+
+			<!-- Item 3: Newbie -->
+			<div class="footer-bottom-item"
+							x-data="{ footerMenu1: false, footerMenu2: false, isMobile: (window.innerWidth < 768) }"
+							x-init="isMobile = (window.innerWidth < 768)"
+							x-on:resize.window="isMobile = (window.innerWidth < 768)">
+
+				<!-- Newbie Section -->
+				<div @click="if (isMobile) { footerMenu1 = !footerMenu1 }">
+					<h3>Newbie</h3>
+					<template x-if="isMobile && !footerMenu1">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+					<template x-if="isMobile && footerMenu1">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+				</div>
+				<ul x-show="!isMobile || footerMenu1" @click.outside="if (isMobile) { footerMenu1 = false }" class="hidden md:block">
+					<li><a href="/category.html">Crypto Terminology</a></li>
+					<li><a href="/category.html">Top reputable crypto exchanges</a></li>
+				</ul>
+
+				<!-- Earn Money Section -->
+				<div @click="if (isMobile) { footerMenu2 = !footerMenu2 }">
+					<h3>Earn money</h3>
+					<template x-if="isMobile && !footerMenu2">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+					<template x-if="isMobile && footerMenu2">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+				</div>
+				<ul x-show="!isMobile || footerMenu2" @click.outside="if (isMobile) { footerMenu2 = false }" class="hidden md:block">
+					<li><a href="/category.html">Airdrop</a></li>
+				</ul>
+			</div>
+
+
+			<!-- Item 4: Social Network -->
+			<div class="footer-bottom-item" x-data="{ footerMenu: false, isMobile: (window.innerWidth < 768) }"
+							x-init="isMobile = (window.innerWidth < 768)"
+							x-on:resize.window="isMobile = (window.innerWidth < 768)">
+				<div @click="if (isMobile) { footerMenu = !footerMenu }">
+					<h3>Social network</h3>
+					<template x-if="isMobile && !footerMenu">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+					<template x-if="isMobile && footerMenu">
+						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
+						</svg>
+					</template>
+				</div>
+				<ul x-show="!isMobile || footerMenu" @click.outside="if (isMobile) { footerMenu = false }" class="hidden md:block">
+					<li><a href="/category.html">Facebook</a></li>
+					<li><a href="/category.html">Twitter</a></li>
+					<li><a href="/category.html">Youtube</a></li>
+					<li><a href="/category.html">Telegram</a></li>
+					<li><a href="/category.html">TikTok</a></li>
+					<li><a href="/category.html">Linkedln</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</footer>
+<!-- End Footer -->

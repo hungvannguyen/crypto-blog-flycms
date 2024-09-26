@@ -1,0 +1,25 @@
+.banner{
+  &-image{
+    @apply max-h-[218px] md:max-w-[329px] lg:max-w-[429px] lg:max-h-[244px]  xl:max-w-[560px] xl:max-h-[317px] object-cover overflow-hidden rounded-lg;
+
+    img{
+      @apply w-full h-full object-cover overflow-hidden rounded-lg;
+    }
+  }
+
+  &-information{
+    @apply flex flex-col space-y-6 justify-between py-2 md:space-y-0 lg:py-4;
+
+    p{
+        @apply text-lg text-denary dark:text-quaternary;
+    }
+  }
+
+    &-title{
+        @apply text-xl lg:text-4xl xl:text-5xl font-semibold dark:text-primary;
+    }
+
+  &-author{
+    @apply dark:underline;
+  }
+}

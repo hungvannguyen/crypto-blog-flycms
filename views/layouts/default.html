@@ -1,0 +1,74 @@
+{% if request.query('ajax') %}
+{% set posts = post_list() %}
+{% set data = { data: posts } %}
+{% set postsJson = [] %}
+{% for item in posts %}
+{% set thumbnailFile = model_relation(item, 'thumbnailFile') %}
+{% set thumbnailUrl = image_resize(300, thumbnailFile) ?: link_asset('images/das-1.png') %}
+{% set subject = model_relation(item, 'subject') %}
+{% set tag = model_relation(item, 'websiteTags')%}
+
+{% set postsJson = postsJson|merge([
+{
+title: item.title,
+slug: item.slug,
+description: item.description,
+url: link_to(item),
+thumbnail_file_url: thumbnailUrl,
+tags: tag,
+meta: {
+episodeCurrent: subject.getMetaValue('episode_current'),
+title: subject.title,
+year: subject.getMetaValue('year'),
+quality: subject.getMetaValue('quality'),
+}
+}
+])%}
+{% endfor %}
+{% set data = { data: postsJson } %}
+{{ data|json_encode }}
+
+{% else %}
+
+<!DOCTYPE html>
+<html lang="en" x-data="{ darkMode: localStorage.getItem('dark') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" x-bind:class="{ 'dark': darkMode }">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ pageTitle }}</title>
+	<link href="{{ link_asset('css/style.min.css') }}?t={{ time() }}" rel="stylesheet" type="text/css"/>
+	<link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+	/>
+	{% include 'components/common_css.html' %}
+</head>
+<body>
+
+{% include 'partials/navbar.html' %}
+
+<div>
+	{{ block('content') }}
+</div>
+
+{% include 'partials/footer.html' %}
+
+{% include 'components/common_js.html' %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            bulletClass: "custom-bullet",
+            bulletActiveClass: "custom-bullet-active",
+        },
+    });
+</script>
+</body>
+</html>
+{% endif %}

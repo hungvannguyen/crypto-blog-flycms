@@ -1,0 +1,260 @@
+.card{
+  &-container{
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4 h-[735px] max-h-[735px] lg:h-[375px] lg:max-h-[375px] xl:h-[485px] xl:max-h-[485px];
+
+    &-1{
+        @apply grid grid-cols-2 gap-4;
+    }
+
+    &-2{
+        @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+    }
+
+    &-3{
+      @apply grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-28;
+    }
+
+    &-4{
+      @apply grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-28;
+    }
+
+    &-5{
+      @apply grid grid-cols-1 lg:grid-cols-3 space-y-6 lg:space-y-0 lg:gap-7 h-[504px] lg:h-[484px] xl:h-[622px];
+    }
+
+    &-6{
+      @apply grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-6 xl:gap-7 h-[131px] lg:h-[484px] xl:h-[622px];
+    }
+
+    &-7{
+      @apply grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-10 xl:gap-28;
+    }
+
+    &-8{
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-7 h-[1935px] max-h-[1935px] lg:h-[629px] lg:max-h-[629px] xl:h-[848px] xl:max-h-[848px];
+    }
+
+    &-9{
+      @apply space-y-4 xl:space-y-8;
+    }
+
+    &-10{
+      @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+    }
+
+    &-11{
+      @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+    }
+
+  }
+
+  &-wrapper{
+    @apply relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-7 h-auto;
+
+    &-1{
+        @apply relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-5 pb-3 h-auto;
+    }
+
+    &-2{
+        @apply p-4 rounded-md hover:bg-eleven dark:hover:bg-none;
+    }
+
+    &-3{
+        @apply flex gap-6 px-4 md:justify-center items-center;
+    }
+
+    &-4{
+        @apply relative isolate overflow-hidden rounded-2xl px-5 pb-3 h-auto;
+    }
+
+    &-5{
+        @apply relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-5 pb-3 h-auto max-h-[160px] lg:max-h-[227px] xl:max-h-[296px];
+    }
+
+    &-6{
+      @apply flex gap-6 lg:justify-center;
+    }
+
+    &-7{
+      @apply flex rounded-md bg-nonary dark:bg-fourteen lg:flex-col max-h-[85px] lg:max-h-[261px] xl:max-h-[350px];
+    }
+
+    &-8{
+      @apply relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-7 h-[358px] lg:h-auto lg:max-h-[484px] xl:max-h-[622px];
+    }
+
+    &-9{
+      @apply relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-5 pb-3 h-[310px] lg:h-auto lg:max-h-[191px] xl:max-h-[268px];
+    }
+
+  }
+
+  &-linear{
+    @apply absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20;
+  }
+
+  &-image{
+    @apply absolute inset-0 h-full w-full object-cover;
+
+    &-1{
+        @apply w-full h-full max-h-[230px] lg:max-h-[166px] xl:max-h-[216px] object-cover overflow-hidden rounded-xl;
+    }
+
+    &-2{
+        @apply w-full h-full max-h-[117px] max-w-[137px] md:max-h-[114px] md:max-w-[127px] xl:max-h-[147px] xl:max-w-[166px] object-cover overflow-hidden rounded-md;
+    }
+
+    &-3{
+        @apply w-full h-full max-h-[245px] md:max-h-[202px] xl:max-h-[282px] object-cover overflow-hidden rounded-xl;
+    }
+
+    &-4{
+      @apply w-full h-full max-h-[102px] max-w-[123px] lg:max-h-[92px] lg:max-w-[111px] xl:max-h-[120px] xl:max-w-[162px] rounded-xl object-cover overflow-hidden;
+    }
+
+    &-5{
+      @apply w-full h-full object-cover overflow-hidden rounded-l-xl max-w-[123px] max-h-[85px] lg:max-w-full lg:rounded-l-none lg:rounded-t-xl lg:max-h-[178px] xl:max-h-[250px] ;
+  }
+  }
+
+  &-content{
+    @apply space-y-5 mt-6;
+
+    &-1{
+        @apply relative px-8 inline-block justify-center items-center overflow-hidden drop-shadow-lg;
+    }
+
+    &-2{
+        @apply flex flex-col xl:gap-2;
+    }
+
+    &-3{
+        @apply flex flex-col gap-2 justify-center lg:mt-6 lg:pb-5 px-5;
+    }
+  }
+
+  &-title{
+    @apply z-10 text-base lg:text-2xl xl:text-3xl text-primary font-semibold hover:underline;
+
+    &-1{
+        @apply z-10 lg:text-sm xl:text-xl text-primary font-semibold line-clamp-2 hover:underline;
+    }
+
+    &-2{
+        @apply text-base lg:text-lg xl:text-2xl text-secondary font-semibold line-clamp-2 hover:underline dark:text-primary;
+    }
+
+    &-3{
+        @apply text-2xl text-secondary font-medium line-clamp-2 hover:underline dark:text-primary;;
+    }
+
+    &-4{
+        @apply text-4xl text-secondary font-semibold dark:text-primary;
+    }
+
+    &-5{
+        @apply text-sm lg:text-xs-12 xl:text-sm line-clamp-2 text-secondary font-semibold dark:text-primary;
+    }
+
+    &-6{
+        @apply text-base lg:text-2xl xl:text-3xl text-secondary font-semibold dark:text-primary hover:underline;
+    }
+
+    &-7{
+      @apply z-10 text-xs lg:text-base xl:text-2xl text-primary font-semibold hover:underline
+    }
+  }
+
+  &-description{
+    @apply text-sm text-secondary font-normal dark:text-primary line-clamp-2;
+
+    &-1{
+        @apply text-base text-secondary font-normal dark:text-primary;
+    }
+
+    &-2{
+      @apply text-xs font-normal text-secondary dark:text-primary;
+    }
+
+    &-3{
+      @apply text-base text-thirteen font-normal dark:text-twelve;
+    }
+
+  }
+
+  &-info{
+    @apply z-10 flex flex-wrap items-center gap-2 text-sm text-denary dark:text-twelve;
+
+    &-1{
+        @apply z-10 flex flex-wrap items-center mt-4 gap-2 text-sm text-twelve dark:text-eleven;
+    }
+
+    &-2{
+        @apply flex flex-col justify-between;
+    }
+
+    &-3{
+        @apply z-10 flex flex-wrap items-center gap-2 text-[5px] mt-1 lg:mt-4 lg:text-xs xl:text-sm text-twelve dark:text-eleven;
+    }
+  }
+
+  &-author{
+    @apply text-sm font-semibold underline;
+
+    &-1{
+        @apply font-semibold underline;
+    }
+  }
+
+  &-date{
+    @apply text-sm font-normal;
+
+    &-icon{
+        @apply size-4;
+    }
+
+    &-1{
+      @apply flex items-center text-xs gap-2 text-denary dark:text-twelve;
+    }
+
+    &-2{
+      @apply font-normal;
+    }
+  }
+
+  &-avatar{
+    @apply size-3 lg:size-5 xl:size-6 rounded-full;
+  }
+
+  &-social{
+
+    &-container{
+        @apply grid max-w-md grid-cols-2 gap-4;
+    }
+
+    &-wrapper{
+
+      @apply border py-4 px-2 rounded-xl;
+
+      a {
+        @apply flex items-center gap-4 text-xs-12;
+      }
+    }
+
+    &-icon{
+        @apply size-10;
+    }
+
+    &-infor{
+        @apply flex flex-col gap-1;
+    }
+
+    &-name{
+        @apply text-xs-12 font-semibold;
+    }
+
+    &-description{
+      @apply text-xs-12 font-light;
+    }
+  }
+}

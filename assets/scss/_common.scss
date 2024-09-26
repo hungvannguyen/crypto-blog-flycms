@@ -1,0 +1,36 @@
+body{
+  @apply mx-auto px-4 dark:bg-secondary dark:text-primary lg:px-1;
+
+  font-family: 'Lexend';
+}
+
+@layer utilities {
+  .text-xs-12 {
+    font-size: 0.75rem;
+  }
+}
+
+section{
+  @apply mt-0 lg:mt-28 xl:mt-32;
+}
+
+.section{
+
+  &-container{
+    @apply max-w-8xl mx-auto mb-10 px-2 lg:my-20 xl:px-0;
+  }
+
+  &-content{
+    @apply max-w-8xl mx-auto mt-10 lg:mt-14;
+  }
+
+  &-title{
+    @apply text-lg lg:text-3xl xl:text-4xl text-secondary font-semibold my-8 dark:text-primary;
+
+    &-1{
+      @apply text-lg lg:text-3xl xl:text-4xl text-secondary font-semibold mb-8 dark:text-primary;
+    }
+  }
+}
+
+
