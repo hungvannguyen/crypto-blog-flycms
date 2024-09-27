@@ -2,64 +2,21 @@
 
 {% block content %}
 <section>
-	<!-- Banner	 -->
-	<section class="section-content">
-		<div class="swiper mySwiper">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<a href="post.html">
-						<div class="banner-image">
-							<img src="https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1">
-						</div>
+	{% include 'components/banner.html' %}
 
-						<div class="banner-information">
-							<h1 class="banner-title">The Development and Applications of Bitcoin</h1>
-							<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date">28 June 2024</span> </p>
-						</div>
-					</a></div>
+	{% set data = website.getMetaValue('home-sections') %}
+	{% set tags = data|split(',') %}
+	{% set tag_data_list = [] %}
+	{% set previous_tag_name = '' %}
 
-				<div class="swiper-slide">
-					<a href="post.html">
-						<div class="banner-image">
-							<img src="https://images.pexels.com/photos/6778650/pexels-photo-6778650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1">
-						</div>
+	{% for tag in tags %}
+	{% set parts = tag|split(':') %}
+	{% set tag_name = (parts|length > 1) ? parts[0]|trim : previous_tag_name %}
+	{% set ids = parts[parts|length > 1 ? 1 : 0]|trim|split(' ') %}
+	{% set previous_tag_name = tag_name %}
+	{% set tag_data_list = tag_data_list|merge([{'tag_name': tag_name, 'ids': ids}]) %}
+	{% endfor %}
 
-						<div class="banner-information">
-							<h1 class="banner-title">Comparison Between Cryptocurrencies and Traditional Fiat Money</h1>
-							<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date">28 June 2024</span> </p>
-						</div>
-					</a>
-				</div>
-
-				<div class="swiper-slide">
-					<a href="post.html">
-						<div class="banner-image">
-							<img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1">
-						</div>
-
-						<div class="banner-information">
-							<h1 class="banner-title">Ethereum and Smart Contracts: How They Work and Practical Applications</h1>
-							<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date">28 June 2024</span> </p>
-						</div>
-					</a>
-				</div>
-
-				<div class="swiper-slide">
-					<a href="post.html">
-						<div class="banner-image">
-							<img src="https://images.pexels.com/photos/8370747/pexels-photo-8370747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1">
-						</div>
-
-						<div class="banner-information">
-							<h1 class="banner-title">The Role of Cryptocurrency in Funding and Investing in Startups</h1>
-							<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date">28 June 2024</span> </p>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="swiper-pagination"></div>
-		</div>
-	</section>
-	<!-- End Banner -->
+	{% include 'components/section_list_post.html' with { tag_data_list: tag_data_list, listData: post_list(), count: listData.getResourcesCount()} %}
 </section>
 {% endblock %}

@@ -1,0 +1,9 @@
+{% if resource %}
+
+{% set thumbnailFile = model_relation(resource, 'thumbnailFile')%}
+<a class="card-wrapper-3" href="{{link_post(resource)}}">
+	<img class="card-image-2" src="{{ image_url( thumbnailFile ) }}" alt="Image">
+
+	<h3 class="card-title-2">{{resource.title}}</h3>
+</a>
+{% endif %}

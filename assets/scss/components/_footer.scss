@@ -13,7 +13,7 @@ footer{
   }
 
   &-bottom{
-    @apply flex flex-col justify-normal mt-4 md:flex-row md:flex-wrap md:justify-between lg:gap-4 ;
+    @apply flex flex-col justify-normal mt-4 md:flex-row md:flex-wrap md:justify-evenly lg:gap-4 ;
 
     &-item{
 

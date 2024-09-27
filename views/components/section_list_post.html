@@ -1,0 +1,12 @@
+{% if tag_data_list %}
+
+{% include 'components/section_post_1.html' with { id: 0 } %}
+
+{% include 'components/section_post_2.html' with { id: 1 } %}
+
+{% include 'components/section_post_3.html' with { ids: [2,3] } %}
+
+{% include 'components/section_post_4.html' %}
+
+{% include 'components/section_post_5.html' %}
+{% endif %}

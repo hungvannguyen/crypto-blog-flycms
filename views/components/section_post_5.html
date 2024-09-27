@@ -1,0 +1,17 @@
+<!--  Content 5	 -->
+<section class="section-content">
+	<div class="section-title">
+		<h2>Explore Categories</h2>
+	</div>
+
+	<div class="card-container-11" x-data="list('/ajax/top/month')">
+		<template x-for="post in data">
+		<a class="card-wrapper-3" :href="post.url">
+			<img class="card-image-2" :src="post.thumbnail_file_url || '{{ link_asset('images/default.png') }}'" alt="Image">
+
+			<h3 class="card-title-2" x-text="post.title"></h3>
+		</a>
+		</template>
+	</div>
+</section>
+<!-- End Content 5	 -->

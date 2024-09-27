@@ -7,7 +7,7 @@
     }
 
     &-2{
-        @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+        @apply grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-4;
     }
 
     &-3{
@@ -56,7 +56,7 @@
     }
 
     &-2{
-        @apply p-4 rounded-md hover:bg-eleven dark:hover:bg-none;
+        @apply rounded-md p-2 lg:p-4 hover:bg-eleven dark:hover:bg-none overflow-hidden;
     }
 
     &-3{
@@ -97,11 +97,11 @@
     @apply absolute inset-0 h-full w-full object-cover;
 
     &-1{
-        @apply w-full h-full max-h-[230px] lg:max-h-[166px] xl:max-h-[216px] object-cover overflow-hidden rounded-xl;
+        @apply w-full h-full  max-h-[230px] md:h-[230px] lg:max-h-[166px] xl:max-h-[216px] object-cover rounded-xl;
     }
 
     &-2{
-        @apply w-full h-full max-h-[117px] max-w-[137px] md:max-h-[114px] md:max-w-[127px] xl:max-h-[147px] xl:max-w-[166px] object-cover overflow-hidden rounded-md;
+        @apply w-full h-full max-h-[117px] max-w-[137px] md:h-[114px] md:max-h-[114px] md:max-w-[127px] xl:h-[147px] xl:max-h-[147px] xl:max-w-[166px] object-cover rounded-md;
     }
 
     &-3{
@@ -118,7 +118,7 @@
   }
 
   &-content{
-    @apply space-y-5 mt-6;
+    @apply space-y-2 mt-2 lg:mt-6 lg:space-y-5;
 
     &-1{
         @apply relative px-8 inline-block justify-center items-center overflow-hidden drop-shadow-lg;
@@ -134,14 +134,14 @@
   }
 
   &-title{
-    @apply z-10 text-base lg:text-2xl xl:text-3xl text-primary font-semibold hover:underline;
+    @apply z-10 text-base lg:text-2xl xl:text-3xl text-primary font-semibold line-clamp-3 hover:underline;
 
     &-1{
         @apply z-10 lg:text-sm xl:text-xl text-primary font-semibold line-clamp-2 hover:underline;
     }
 
     &-2{
-        @apply text-base lg:text-lg xl:text-2xl text-secondary font-semibold line-clamp-2 hover:underline dark:text-primary;
+        @apply text-base flex-1 lg:text-lg xl:text-2xl text-secondary font-semibold line-clamp-2 hover:underline dark:text-primary;
     }
 
     &-3{

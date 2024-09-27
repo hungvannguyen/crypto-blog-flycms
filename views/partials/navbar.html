@@ -8,9 +8,18 @@
 		</div>
 
 		<nav class="navbar-menu">
+			{% set mainMenu = menu_solve('main') %}
+			{% for menuItem in mainMenu %}
+			{% if not menuItem.items %}
+			<div class="navbar-menu-item">
+				<a aria-current="page" href="{{ menuItem.link }}" target="{{ menuItem.new_tab ? '_blank' : '' }}">
+				<button class="navbar-menu-button">{{ menuItem.text }}</button>
+				</a>
+			</div>
+			{% else %}
 			<div class="navbar-menu-item" x-data="{ navMenu: false }" @mouseleave="navMenu = false">
 				<button class="navbar-menu-button" @click="navMenu = !navMenu" @mouseover="navMenu = true">
-					Crypto Insights
+					{{ menuItem.text }}
 					<template x-if="!navMenu">
 						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -23,36 +32,17 @@
 						</svg>
 					</template>
 				</button>
+
 				<div x-show="navMenu" @click.outside="navMenu = false" class="navbar-dropdown" style="display: none">
 					<ul>
-						<li><a href="/category.html">Altcoin</a></li>
-						<li><a href="/category.html">Bitcoin</a></li>
-						<li><a href="/category.html">Defi</a></li>
-						<li><a href="/category.html">Ethereum</a></li>
-						<li><a href="/category.html">NFT</a></li>
+						{% for subMenuItem in menuItem.items %}
+						<li><a href="{{ subMenuItem.link }}" target="{{ subMenuItem.new_tab ? '_blank' : '' }}">{{ subMenuItem.text }}</a></li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
-
-			<div class="navbar-menu-item">
-				<button class="navbar-menu-button">Blockchain</button>
-			</div>
-
-			<div class="navbar-menu-item">
-				<button class="navbar-menu-button">How to</button>
-			</div>
-
-			<div class="navbar-menu-item">
-				<button class="navbar-menu-button">Option</button>
-			</div>
-
-			<div class="navbar-menu-item">
-				<button class="navbar-menu-button">Reviews</button>
-			</div>
-
-			<div class="navbar-menu-item">
-				<button class="navbar-menu-button">AI</button>
-			</div>
+			{% endif %}
+			{% endfor %}
 
 			<div class="navbar-menu-item" x-data="{ navSearch: false }">
 				<button class="navbar-menu-button" @click="navSearch = !navSearch">
@@ -60,7 +50,7 @@
 						<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
 					</svg>
 				</button>
-				<div x-show="navSearch" @click.outside="navSearch = false" class="navbar-dropdown-search">
+				<div x-show="navSearch" @click.outside="navSearch = false" class="navbar-dropdown-search" style="display: none">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="navbar-dropdown-search-icon">
 						<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
 					</svg>
@@ -152,10 +142,17 @@
 
 		<div class="navbar-mobile-menu-bottom">
 			<ul class="navbar-mobile-menu-bottom-list">
+				{% set mainMenu = menu_solve('main') %}
+				{% for menuItem in mainMenu %}
+				{% if not menuItem.items %}
+				<li class="navbar-mobile-menu-bottom-item">
+					<a class="navbar-mobile-menu-bottom-link" href="/category.html">	{{ menuItem.text }}</a>
+				</li>
+				{% else %}
 				<li class="navbar-mobile-menu-bottom-item" x-data="{ navMenu: false }">
 					<div class="navbar-mobile-menu-bottom-toggle" @click="navMenu = !navMenu">
-						<a class="navbar-mobile-menu-bottom-link">
-							<span>Crypto Insights</span>
+						<a aria-current="page" href="{{ menuItem.link }}" target="{{ menuItem.new_tab ? '_blank' : '' }}" class="navbar-mobile-menu-bottom-link">
+							<span>{{ menuItem.text }}</span>
 						</a>
 						<template x-if="!navMenu">
 							<svg class="navbar-mobile-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -170,28 +167,15 @@
 						</template>
 					</div>
 					<ul class="navbar-mobile-menu-bottom-submenu" x-show="navMenu">
-						<li><a href="/category.html">Altcoin</a></li>
-						<li><a href="/category.html">Bitcoin</a></li>
-						<li><a href="/category.html">Defi</a></li>
-						<li><a href="/category.html">Ethereum</a></li>
-						<li><a href="/category.html">NFT</a></li>
+						{% for subMenuItem in menuItem.items %}
+						<li><a href="{{ subMenuItem.link }}" target="{{ subMenuItem.new_tab ? '_blank' : '' }}">{{ subMenuItem.text }}</a>
+						</li>
+						{% endfor %}
 					</ul>
 				</li>
-				<li class="navbar-mobile-menu-bottom-item">
-					<a class="navbar-mobile-menu-bottom-link" href="/category.html">Block Chain</a>
-				</li>
-				<li class="navbar-mobile-menu-bottom-item">
-					<a class="navbar-mobile-menu-bottom-link" href="/category.html">How to</a>
-				</li>
-				<li class="navbar-mobile-menu-bottom-item">
-					<a class="navbar-mobile-menu-bottom-link" href="/category.html">Option</a>
-				</li>
-				<li class="navbar-mobile-menu-bottom-item">
-					<a class="navbar-mobile-menu-bottom-link" href="/category.html">Review</a>
-				</li>
-				<li class="navbar-mobile-menu-bottom-item">
-					<a class="navbar-mobile-menu-bottom-link" href="/category.html">AI</a>
-				</li>
+				{% endif %}
+				{% endfor %}
+
 			</ul>
 		</div>
 

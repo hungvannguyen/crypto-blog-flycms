@@ -21,7 +21,7 @@ section{
   }
 
   &-content{
-    @apply max-w-8xl mx-auto mt-10 lg:mt-14;
+    @apply max-w-8xl mx-auto mt-10 lg:mt-14 h-auto;
   }
 
   &-title{

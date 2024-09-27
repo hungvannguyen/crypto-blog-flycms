@@ -25,12 +25,21 @@
 		</div>
 
 		<div class="footer-bottom">
+			{% set footerMenu = menu_solve('footer') %}
+			{% for menuItem in footerMenu %}
+			{% if not menuItem.items %}
+			<div class="footer-bottom-item">
+				<div>
+					<h3>{{ menuItem.text }}</h3>
+				</div>
+			</div>
+			{% else %}
 			<!-- Item 1: About Us -->
 			<div class="footer-bottom-item" x-data="{ footerMenu: false, isMobile: (window.innerWidth < 768) }"
 							x-init="isMobile = (window.innerWidth < 768)"
 							x-on:resize.window="isMobile = (window.innerWidth < 768)">
 				<div @click="if (isMobile) { footerMenu = !footerMenu }">
-					<h3 >About us</h3>
+					<h3 >{{ menuItem.text }}</h3>
 					<template x-if="isMobile && !footerMenu">
 						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -42,110 +51,15 @@
 						</svg>
 					</template>
 				</div>
-				<ul x-show="!isMobile || footerMenu" @click.outside="if (isMobile) { footerMenu = false }" class="hidden md:block">
-					<li><a href="/category.html">About logo</a></li>
-					<li><a href="/category.html">Contact</a></li>
-					<li><a href="/category.html">Advertise</a></li>
-					<li><a href="/category.html">Recruitment</a></li>
+				<ul x-show="!isMobile || footerMenu" @click.outside="if (isMobile) { footerMenu = false }" class="hidden md:block" style="display: none">
+					{% for subMenuItem in menuItem.items %}
+					<li><a href="{{ subMenuItem.link }}">{{ subMenuItem.text }}</a></li>
+					{% endfor %}
 				</ul>
 			</div>
-
-			<!-- Item 2: Knowledge -->
-			<div class="footer-bottom-item" x-data="{ footerMenu: false, isMobile: (window.innerWidth < 768) }"
-							x-init="isMobile = (window.innerWidth < 768)"
-							x-on:resize.window="isMobile = (window.innerWidth < 768)">
-				<div @click="if (isMobile) { footerMenu = !footerMenu }">
-					<h3 >Knowledge</h3>
-					<template x-if="isMobile && !footerMenu">
-						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-						</svg>
-					</template>
-					<template x-if="isMobile && footerMenu">
-						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
-						</svg>
-					</template>
-				</div>
-				<ul x-show="!isMobile || footerMenu" @click.outside="if (isMobile) { footerMenu = false }" class="hidden md:block">
-					<li><a href="/category.html">Crypto</a></li>
-					<li><a href="/category.html">Technical analysis</a></li>
-					<li><a href="/category.html">Invest</a></li>
-					<li><a href="/category.html">Project Review</a></li>
-				</ul>
-			</div>
-
-			<!-- Item 3: Newbie -->
-			<div class="footer-bottom-item"
-							x-data="{ footerMenu1: false, footerMenu2: false, isMobile: (window.innerWidth < 768) }"
-							x-init="isMobile = (window.innerWidth < 768)"
-							x-on:resize.window="isMobile = (window.innerWidth < 768)">
-
-				<!-- Newbie Section -->
-				<div @click="if (isMobile) { footerMenu1 = !footerMenu1 }">
-					<h3>Newbie</h3>
-					<template x-if="isMobile && !footerMenu1">
-						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-						</svg>
-					</template>
-					<template x-if="isMobile && footerMenu1">
-						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
-						</svg>
-					</template>
-				</div>
-				<ul x-show="!isMobile || footerMenu1" @click.outside="if (isMobile) { footerMenu1 = false }" class="hidden md:block">
-					<li><a href="/category.html">Crypto Terminology</a></li>
-					<li><a href="/category.html">Top reputable crypto exchanges</a></li>
-				</ul>
-
-				<!-- Earn Money Section -->
-				<div @click="if (isMobile) { footerMenu2 = !footerMenu2 }">
-					<h3>Earn money</h3>
-					<template x-if="isMobile && !footerMenu2">
-						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-						</svg>
-					</template>
-					<template x-if="isMobile && footerMenu2">
-						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
-						</svg>
-					</template>
-				</div>
-				<ul x-show="!isMobile || footerMenu2" @click.outside="if (isMobile) { footerMenu2 = false }" class="hidden md:block">
-					<li><a href="/category.html">Airdrop</a></li>
-				</ul>
-			</div>
-
-
-			<!-- Item 4: Social Network -->
-			<div class="footer-bottom-item" x-data="{ footerMenu: false, isMobile: (window.innerWidth < 768) }"
-							x-init="isMobile = (window.innerWidth < 768)"
-							x-on:resize.window="isMobile = (window.innerWidth < 768)">
-				<div @click="if (isMobile) { footerMenu = !footerMenu }">
-					<h3>Social network</h3>
-					<template x-if="isMobile && !footerMenu">
-						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-						</svg>
-					</template>
-					<template x-if="isMobile && footerMenu">
-						<svg class="navbar-menu-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
-						</svg>
-					</template>
-				</div>
-				<ul x-show="!isMobile || footerMenu" @click.outside="if (isMobile) { footerMenu = false }" class="hidden md:block">
-					<li><a href="/category.html">Facebook</a></li>
-					<li><a href="/category.html">Twitter</a></li>
-					<li><a href="/category.html">Youtube</a></li>
-					<li><a href="/category.html">Telegram</a></li>
-					<li><a href="/category.html">TikTok</a></li>
-					<li><a href="/category.html">Linkedln</a></li>
-				</ul>
-			</div>
+			{% endif %}
+			<!-- End Item 1: About Us -->
+			{% endfor %}
 		</div>
 
 	</div>
