@@ -1,57 +1,21 @@
 <!-- Banner	 -->
 <section class="section-content">
-	<div class="swiper mySwiper">
+	<div class="swiper mySwiper" x-data="list('/ajax/top/year', true, 4)">
 		<div class="swiper-wrapper">
+			<template x-for="post in data">
 			<div class="swiper-slide">
-				<a href="post.html">
+				<a :href="post.url">
 					<div class="banner-image">
-						<img src="https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1">
+						<img :src="post.thumbnail_file_url || '{{ link_asset('images/default.png') }}'" alt="Slide">
 					</div>
 
 					<div class="banner-information">
-						<h1 class="banner-title">The Development and Applications of Bitcoin</h1>
-						<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date">28 June 2024</span> </p>
-					</div>
-				</a></div>
-
-			<div class="swiper-slide">
-				<a href="post.html">
-					<div class="banner-image">
-						<img src="https://images.pexels.com/photos/6778650/pexels-photo-6778650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1">
-					</div>
-
-					<div class="banner-information">
-						<h1 class="banner-title">Comparison Between Cryptocurrencies and Traditional Fiat Money</h1>
-						<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date">28 June 2024</span> </p>
+						<h1 class="banner-title" x-text="post.title"></h1>
+						<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date" x-text="post.created_at"></span> </p>
 					</div>
 				</a>
 			</div>
-
-			<div class="swiper-slide">
-				<a href="post.html">
-					<div class="banner-image">
-						<img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1">
-					</div>
-
-					<div class="banner-information">
-						<h1 class="banner-title">Ethereum and Smart Contracts: How They Work and Practical Applications</h1>
-						<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date">28 June 2024</span> </p>
-					</div>
-				</a>
-			</div>
-
-			<div class="swiper-slide">
-				<a href="post.html">
-					<div class="banner-image">
-						<img src="https://images.pexels.com/photos/8370747/pexels-photo-8370747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1">
-					</div>
-
-					<div class="banner-information">
-						<h1 class="banner-title">The Role of Cryptocurrency in Funding and Investing in Startups</h1>
-						<p>By <span class="banner-author">Olumide Ogunjobi</span>  | <span class="banner-date">28 June 2024</span> </p>
-					</div>
-				</a>
-			</div>
+			</template>
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>

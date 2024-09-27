@@ -34,3 +34,10 @@ section{
 }
 
 
+.btn{
+  &-view-more{
+    @apply m-auto text-sm text-secondary border-2 border-secondary py-2 px-4 rounded-md hover:bg-secondary hover:text-primary dark:text-primary dark:border-primary dark:hover:text-secondary dark:hover:bg-primary;
+  }
+}
+
+

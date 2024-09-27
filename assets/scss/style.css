@@ -28,6 +28,10 @@ section {
   @apply text-lg lg:text-3xl xl:text-4xl text-secondary font-semibold mb-8 dark:text-primary;
 }
 
+.btn-view-more {
+  @apply m-auto text-sm text-secondary border-2 border-secondary py-2 px-4 rounded-md hover:bg-secondary hover:text-primary dark:text-primary dark:border-primary dark:hover:text-secondary dark:hover:bg-primary;
+}
+
 .max-w-8xl {
   max-width: 88rem;
 }
@@ -149,10 +153,10 @@ footer {
 }
 
 .banner-image {
-  @apply max-h-[218px] md:max-w-[329px] lg:max-w-[429px] lg:max-h-[244px]  xl:max-w-[560px] xl:max-h-[317px] object-cover overflow-hidden rounded-lg;
+  @apply h-[218px] max-h-[218px] md:w-[329px] md:max-w-[329px] lg:w-[429px] lg:max-w-[429px] lg:h-[244px] lg:max-h-[244px] xl:w-[560px] xl:max-w-[560px] xl:h-[317px] xl:max-h-[317px] object-cover shrink-0 rounded-lg;
 }
 .banner-image img {
-  @apply w-full h-full object-cover overflow-hidden rounded-lg;
+  @apply w-full h-full object-cover rounded-lg;
 }
 .banner-information {
   @apply flex flex-col space-y-6 justify-between py-2 md:space-y-0 lg:py-4;
@@ -161,7 +165,7 @@ footer {
   @apply text-lg text-denary dark:text-quaternary;
 }
 .banner-title {
-  @apply text-xl lg:text-4xl xl:text-5xl font-semibold dark:text-primary;
+  @apply text-xl line-clamp-2 lg:text-4xl xl:text-5xl font-semibold dark:text-primary;
 }
 .banner-author {
   @apply dark:underline;
@@ -244,7 +248,7 @@ footer {
   @apply absolute inset-0 h-full w-full object-cover;
 }
 .card-image-1 {
-  @apply w-full h-full  max-h-[230px] md:h-[230px] lg:max-h-[166px] xl:max-h-[216px] object-cover rounded-xl;
+  @apply w-full h-full max-h-[230px] md:h-[230px] lg:max-h-[166px] xl:max-h-[216px] object-cover rounded-xl;
 }
 .card-image-2 {
   @apply w-full h-full max-h-[117px] max-w-[137px] md:h-[114px] md:max-h-[114px] md:max-w-[127px] xl:h-[147px] xl:max-h-[147px] xl:max-w-[166px] object-cover rounded-md;
@@ -253,7 +257,7 @@ footer {
   @apply w-full h-full max-h-[245px] md:max-h-[202px] xl:max-h-[282px] object-cover overflow-hidden rounded-xl;
 }
 .card-image-4 {
-  @apply w-full h-full max-h-[102px] max-w-[123px] lg:max-h-[92px] lg:max-w-[111px] xl:max-h-[120px] xl:max-w-[162px] rounded-xl object-cover overflow-hidden;
+  @apply w-full h-[102px] shrink-0  max-h-[102px] max-w-[123px] lg:h-[92px] lg:max-h-[92px] lg:w-[111px] lg:max-w-[111px] xl:h-[120px] xl:max-h-[120px] xl:w-[162px] xl:max-w-[162px] rounded-xl object-cover;
 }
 .card-image-5 {
   @apply w-full h-full object-cover overflow-hidden rounded-l-xl max-w-[123px] max-h-[85px] lg:max-w-full lg:rounded-l-none lg:rounded-t-xl lg:max-h-[178px] xl:max-h-[250px];
@@ -286,7 +290,7 @@ footer {
   @apply text-4xl text-secondary font-semibold dark:text-primary;
 }
 .card-title-5 {
-  @apply text-sm lg:text-xs-12 xl:text-sm line-clamp-2 text-secondary font-semibold dark:text-primary;
+  @apply text-sm flex-1 lg:text-xs-12 xl:text-sm line-clamp-2 text-secondary font-semibold dark:text-primary;
 }
 .card-title-6 {
   @apply text-base lg:text-2xl xl:text-3xl text-secondary font-semibold dark:text-primary hover:underline;
@@ -301,7 +305,7 @@ footer {
   @apply text-base text-secondary font-normal dark:text-primary;
 }
 .card-description-2 {
-  @apply text-xs font-normal text-secondary dark:text-primary;
+  @apply text-xs font-normal text-secondary line-clamp-2 dark:text-primary;
 }
 .card-description-3 {
   @apply text-base text-thirteen font-normal dark:text-twelve;
