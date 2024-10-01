@@ -18,9 +18,7 @@
 		{% if categoriesData is not empty %}
 		{% set catrs = website_category_find_by_id(tagIds) %}
 		<div>
-			<div class="section-title-1">
-				<h2>{{ tag_data_list[id]['tag_name'] }}</h2>
-			</div>
+			{% include 'components/section_heading.html' with { title: tag_data_list[id]['tag_name'] } %}
 
 			<div class="card-container-9">
 				{% include 'components/list_card.html' with { resources: categoriesData, resources_card: 'resources_card_4' } %}

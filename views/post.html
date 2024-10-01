@@ -3,8 +3,9 @@
 {% block content %}
 <section>
 	<section class="section-container">
-		{% include 'components/breadcrumb.html' with { page:'Post' , title: post.title} %}
-
+		{% for websiteTag in model_relation(post, 'websiteTags') | slice(0,1) %}
+		{% include 'components/breadcrumb.html' with { page: websiteTag.name, link: link_to(websiteTag) , title: post.title} %}
+		{% endfor %}
 		<!-- 	Content	 -->
 		<div class="post-container">
 			<div class="post-wrapper">
@@ -12,13 +13,11 @@
 					{{post.title}}
 				</h1>
 				<p class="post-info">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="post-avatar">
-						<path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
-					</svg>
-
-					By <span class="post-author">Olumide Ogunjobi</span>  |
-					<span class="post-date">{{ post.created_at | date("j F Y") }}</span> </p>
-
+					{% for websiteTag in model_relation(post, 'websiteTags')%}
+					<a href="{{ link_to(websiteTag) }}"><span class="post-tag">{{ websiteTag.name }}</span></a>
+					{% endfor %} |
+					<span class="post-date">{{ post.created_at | date("j F Y") }}</span>
+				</p>
 				<div class="post-content">
 					{% set thumbnailFile = model_relation(post, 'thumbnailFile') %}
 					{% if thumbnailFile %}
@@ -100,7 +99,7 @@
 									<svg class="card-date-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 										<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 									</svg>
-									<span>20 Min Read</span>
+									<span x-text="formatDate(post.created_at)"></span>
 								</p>
 							</div>
 						</a>
@@ -121,5 +120,11 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => window.viewCount('{{ post.slug }}'))
+</script>
+
+<script type="module">
+    import { formatDate } from '{{ link_asset('js/main.js') }}?t={{ time() }}';
+
+    window.formatDate = formatDate;
 </script>
 {% endblock %}

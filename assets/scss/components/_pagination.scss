@@ -1,0 +1,41 @@
+.pagination {
+  &-container {
+    @apply z-10 flex flex-col sm:flex-row justify-center sm:justify-between mx-auto mt-8 border border-secondary dark:border-primary p-6 gap-4;
+  }
+
+  &-navigation {
+    @apply flex justify-center content-center gap-6 mx-auto;
+  }
+
+  &-button {
+    @apply flex items-center justify-center cursor-pointer;
+  }
+
+  &-icon {
+    @apply w-6 h-6;
+
+    &-container {
+      @apply flex justify-center my-auto text-secondary;
+    }
+  }
+
+  &-input {
+    @apply flex justify-center content-center gap-4 text-secondary;
+  }
+
+  &-item {
+    @apply rounded-full border w-6 h-6 p-4 flex items-center justify-center cursor-pointer font-medium text-secondary hover:bg-quinary hover:text-primary dark:bg-primary dark:hover:bg-quinary dark:hover:text-primary;
+
+    &-active {
+      @apply bg-secondary text-primary dark:bg-senary dark:text-secondary;
+    }
+  }
+
+  &-page_input {
+    @apply h-6 w-14;
+  }
+
+  &-info {
+    @apply my-auto text-secondary hidden sm:block;
+  }
+}

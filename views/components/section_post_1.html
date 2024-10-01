@@ -13,9 +13,7 @@
 {% set catrs = website_category_find_by_id(tagIds) %}
 
 <section class="section-content">
-	<div class="section-title">
-		<h2>{{ tag_data_list[id]['tag_name'] }}</h2>
-	</div>
+	{% include 'components/section_heading.html' with { title: tag_data_list[id]['tag_name'], link: catrs } %}
 
 	<div class="card-container">
 		{% include 'components/resources_card_1.html' with { resource: categoriesData[0] } %}

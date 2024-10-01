@@ -1,0 +1,20 @@
+{%
+set query = multikey_filter_post_query()
+.where('visibility', '=', 'public')
+.setFilterKeys([websiteCategoryId])
+.setFilterKeyMatchingType('all')
+.sortBy('views')
+.sortDesc()
+.setLimit(3)
+%}
+
+{% set posts = multikey_filter_get_posts(query) %}
+
+<div class="card-container-5">
+	{% set firstPost = posts|first %}
+	{% include 'components/resources_card_6.html' with { resource: firstPost } %}
+
+	<div class="card-container-6">
+		{% include 'components/list_card.html' with { resources: posts | slice(1,2), resources_card: 'resources_card_7' } %}
+	</div>
+</div>

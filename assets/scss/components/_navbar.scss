@@ -41,6 +41,9 @@ header{
       &-icon{
         @apply size-6 my-auto cursor-pointer text-senary;
       }
+      form{
+        @apply flex w-full;
+      }
 
       input{
         @apply w-full text-xs text-senary px-2 outline-0 border-none  dark:bg-octonary dark:text-septenary;

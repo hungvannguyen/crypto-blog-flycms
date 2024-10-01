@@ -10,6 +10,7 @@
       @apply flex flex-col gap-10 lg:ease-in-out lg:self-start lg:sticky lg:top-28;
     }
   }
+
   &-title{
     @apply text-xl lg:text-3xl xl:text-4xl font-semibold text-secondary dark:text-primary;
 
@@ -76,5 +77,9 @@
     &-text{
         @apply text-base font-light text-thirteen dark:text-twelve ;
     }
+  }
+
+  &-tag{
+    @apply text-sm px-2 py-1 rounded font-normal text-primary bg-senary;
   }
 }

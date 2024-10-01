@@ -4,7 +4,7 @@
         @apply flex flex-wrap mt-28;
 
         li{
-          @apply text-secondary text-sm font-normal after:content-['>'] after:mx-2 after:text-secondary after:last:content-none;
+          @apply text-secondary text-sm font-normal after:content-['>'] after:mx-2 after:text-secondary after:last:content-none dark:text-primary dark:after:text-primary;
         }
       }
     }

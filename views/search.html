@@ -1,0 +1,32 @@
+{% extends 'layouts/default.html' %}
+
+{% block content %}
+<!-- Main Content -->
+
+<section>
+
+	<section class="section-container">
+		<!-- Breadcrumb -->
+		{% include 'components/breadcrumb.html' with { page:'Search' , title: keywords} %}
+		<!-- End Breadcrumb -->
+
+		<!--  Content 4	 -->
+		<section class="section-content">
+			{% include 'components/section_heading.html' with { title: 'Search result for: ' ~ keywords } %}
+
+			{% include 'components/section_post_7.html' with { id: websiteTag.id } %}
+
+			{% set count = listData.getResourcesCount() %}
+
+			<div>
+				{% include 'components/pagination_tailwind.html' with { count: count } %}
+			</div>
+		</section>
+		<!-- End Content 4 -->
+	</section>
+
+
+</section>
+
+<!-- End Main Content -->
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends 'layouts/default.html' %}
+
+{% block content %}
+<!-- Main Content -->
+
+<section>
+
+	<section class="section-container">
+		<!-- Breadcrumb -->
+		{% include 'components/breadcrumb.html' with { page:'Category' , title: websiteCategory.title} %}
+		<!-- End Breadcrumb -->
+
+		<!-- 	Content 2	 -->
+		<div class="section-content">
+			<div class="card-container-4">
+				<div class="card-content">
+					<h3 class="card-title-4">{{websiteCategory.title}}</h3>
+					<p class="card-description-1">
+						{{ websiteCategory.description ? websiteCategory.description : "This category does not have any description yet. Check back later for updates." }}
+					</p>
+				</div>
+				{% set thumbnailFile = model_relation(websiteCategory, 'thumbnailFile')%}
+				<div class="card-content-1">
+
+					<img class="card-image-shadow" src="{{ thumbnailFile ? image_url(thumbnailFile) : link_asset('images/default-image.jpg') }}" alt="Image shadow" >
+
+					<img class="card-image-3" src="{{ thumbnailFile ? image_url(thumbnailFile) : link_asset('images/default-image.jpg') }}" alt="Image">
+				</div>
+			</div>
+		</div>
+		<!-- 	End Content 2	 -->
+
+
+		<!-- 	Content 3	 -->
+		<div class="section-content">
+			{% set fullTitle = 'Top ' ~ websiteCategory.title ~ ' Articles' %}
+			{% include 'components/section_heading.html' with { title: fullTitle } %}
+
+			{% include 'components/section_post_6.html' with { websiteCategoryId: websiteCategory.id } %}
+		</div>
+		<!-- 	End Content 3	 -->
+
+		<!--  Content 4	 -->
+		<section class="section-content">
+			{% set fullTitle = 'Latest ' ~ websiteCategory.title ~ ' Articles' %}
+			{% include 'components/section_heading.html' with { title: fullTitle } %}
+
+			{% include 'components/section_post_7.html' with { websiteCategoryId: websiteCategory.id } %}
+			{% set count = listData.getResourcesCount() %}
+
+			<div>
+				{% include 'components/pagination_tailwind.html' with { count: count } %}
+			</div>
+		</section>
+		<!-- End Content 4 -->
+
+		<!--  Content 5	 -->
+		<section class="section-content">
+
+			<div class="card-container-7">
+				<div>
+					{% include 'components/section_heading.html' with { title: 'Latest Articles' } %}
+
+					{% include 'components/section_post_8.html' %}
+				</div>
+
+				<div>
+					<div>
+						{% include 'components/section_heading.html' with { title: 'Stay Connected' } %}
+
+						<div class="card-social-container">
+							<div class="card-social-wrapper">
+								<a href="">
+									<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256" class="card-social-icon">
+										<g fill="#00a3ff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M19.25391,2c-3.942,0 -6.25391,2.08217 -6.25391,6.82617v4.17383h-5v5h5v12h5v-12h4l1,-5h-5v-3.32812c0,-1.787 0.58277,-2.67187 2.25977,-2.67187h2.74023v-4.79492c-0.474,-0.064 -1.85509,-0.20508 -3.74609,-0.20508z"></path></g></g>
+									</svg>
+									<div class="card-social-infor">
+										<p class="card-social-name">Facebook</p>
+										<p class="card-social-description">Like us on Facebook</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="card-social-wrapper">
+								<a href="">
+									<svg class="card-social-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+										<path d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z"></path>
+									</svg>
+									<div class="card-social-infor">
+										<p class="card-social-name">X</p>
+										<p class="card-social-description">Follow us on X</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="card-social-wrapper">
+								<a href="">
+									<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256" class="card-social-icon">
+										<g fill="#bd00ff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M16,3c-7.16752,0 -13,5.83248 -13,13v18c0,7.16752 5.83248,13 13,13h18c7.16752,0 13,-5.83248 13,-13v-18c0,-7.16752 -5.83248,-13 -13,-13zM16,5h18c6.08648,0 11,4.91352 11,11v18c0,6.08648 -4.91352,11 -11,11h-18c-6.08648,0 -11,-4.91352 -11,-11v-18c0,-6.08648 4.91352,-11 11,-11zM37,11c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM25,14c-6.06329,0 -11,4.93671 -11,11c0,6.06329 4.93671,11 11,11c6.06329,0 11,-4.93671 11,-11c0,-6.06329 -4.93671,-11 -11,-11zM25,16c4.98241,0 9,4.01759 9,9c0,4.98241 -4.01759,9 -9,9c-4.98241,0 -9,-4.01759 -9,-9c0,-4.98241 4.01759,-9 9,-9z"></path></g></g>
+									</svg>
+									<div class="card-social-infor">
+										<p class="card-social-name">Instagram</p>
+										<p class="card-social-description">Watch us on Instagram</p>
+									</div>
+								</a>
+							</div>
+						</div>
+
+					</div>
+
+					<div>
+						{% include 'components/section_heading.html' with { title: 'For Further Reference' } %}
+
+						<div class="card-container-9" x-data="list('/ajax/top/month', true, 6)">
+							<template x-for="post in data">
+							<a class="card-wrapper-6" :href="post.url">
+								<img class="card-image-4" :src="post.thumbnail_file_url || '{{ link_asset('images/default.jpg') }}'" alt="Image">
+
+								<div class="card-info-2">
+									<div class="card-content-2">
+										<h3 class="card-title-5" x-text="post.title"></h3>
+										<p class="card-description-2" x-text="post.description"></p>
+									</div>
+
+									<p class="card-date-1">
+										<svg class="card-date-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+										</svg>
+										<span x-text="formatDate(post.created_at)"></span>
+									</p>
+								</div>
+							</a>
+							</template>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</section>
+		<!-- End Content 3	 -->
+	</section>
+
+
+</section>
+
+<script type="module">
+    import { formatDate } from '{{ link_asset('js/main.js') }}?t={{ time() }}';
+
+    window.formatDate = formatDate;
+</script>
+
+<!-- End Main Content -->
+{% endblock %}
