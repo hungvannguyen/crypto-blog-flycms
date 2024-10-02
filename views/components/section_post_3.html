@@ -21,7 +21,7 @@
 			{% include 'components/section_heading.html' with { title: tag_data_list[id]['tag_name'] } %}
 
 			<div class="card-container-9">
-				{% include 'components/list_card.html' with { resources: categoriesData, resources_card: 'resources_card_4' } %}
+				{% include 'components/list_card.html' with { resources: categoriesData | slice(0,4), resources_card: 'resources_card_4' } %}
 			</div>
 		</div>
 		{% endif %}
