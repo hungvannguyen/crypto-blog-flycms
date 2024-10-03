@@ -19,11 +19,11 @@
     }
 
     &-5{
-      @apply grid grid-cols-1 lg:grid-cols-3 space-y-6 lg:space-y-0 lg:gap-7 h-[504px] lg:h-[484px] xl:h-[622px];
+      @apply grid grid-cols-1 lg:grid-cols-3 space-y-4 lg:space-y-0 lg:gap-7 h-[540px] lg:h-[484px] xl:h-[622px];
     }
 
     &-6{
-      @apply grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-6 xl:gap-7 h-[131px] lg:h-[484px] xl:h-[622px];
+      @apply grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-6 xl:gap-7 h-[200px] lg:h-[484px] xl:h-[622px];
     }
 
     &-7{

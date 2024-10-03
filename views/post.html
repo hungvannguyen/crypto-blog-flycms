@@ -1,7 +1,7 @@
 {% extends 'layouts/default.html' %}
 
 {% block content %}
-<section>
+
 	<section class="section-container">
 		{% for websiteTag in model_relation(post, 'websiteTags') | slice(0,1) %}
 		{% include 'components/breadcrumb.html' with { page: websiteTag.name, link: link_to(websiteTag) , title: post.title} %}
@@ -116,7 +116,6 @@
 		</div>
 		<!-- 	End Content -->
 	</section>
-</section>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => window.viewCount('{{ post.slug }}'))

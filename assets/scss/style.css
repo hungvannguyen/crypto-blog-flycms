@@ -2,7 +2,7 @@
 @import "tailwindcss/components.css";
 @import "tailwindcss/utilities.css";
 body {
-  @apply mx-auto px-4 dark:bg-secondary dark:text-primary lg:px-1;
+  @apply mx-auto dark:bg-secondary dark:text-primary lg:px-1;
   font-family: "Lexend";
 }
 
@@ -11,21 +11,21 @@ body {
     font-size: 0.75rem;
   }
 }
-section {
-  @apply mt-0 lg:mt-28 xl:mt-32;
-}
-
 .section-container {
-  @apply max-w-8xl mx-auto mb-10 px-2 lg:mt-20 xl:px-0;
+  @apply max-w-8xl  mx-auto mb-10 px-2 mt-0 lg:mt-16 xl:mt-24 xl:px-0;
 }
 .section-content {
-  @apply max-w-8xl mx-auto mt-10 lg:mt-14 h-auto;
+  @apply max-w-8xl mx-auto px-3;
 }
 .section-title {
-  @apply text-lg lg:text-3xl xl:text-4xl text-secondary font-semibold my-8 dark:text-primary;
+  @apply text-lg text-secondary font-semibold my-6 lg:my-16 md:text-3xl xl:text-4xl  dark:text-primary;
 }
 .section-title-1 {
-  @apply text-lg lg:text-3xl xl:text-4xl text-secondary font-semibold mb-8 dark:text-primary;
+  @apply text-lg my-6 lg:my-16 lg:text-3xl xl:text-4xl text-secondary font-semibold dark:text-primary;
+}
+
+.logo-text {
+  @apply text-sm text-nowrap font-semibold text-secondary lg:text-xl xl:text-2xl dark:text-primary;
 }
 
 .btn-view-more {
@@ -37,7 +37,7 @@ section {
 }
 
 header {
-  @apply max-w-8xl mx-auto fixed self-start  top-0 left-0 right-0 z-50;
+  @apply max-w-8xl mx-auto fixed self-start top-0 left-0 right-0 z-50;
 }
 
 .navbar-container {
@@ -134,7 +134,7 @@ footer {
   @apply flex justify-between items-center;
 }
 .footer-bottom-item h3 {
-  @apply text-2xl font-semibold text-secondary dark:text-primary my-4;
+  @apply text-lg xl:text-2xl font-semibold text-secondary dark:text-primary my-1;
 }
 .footer-bottom-item ul {
   @apply flex flex-col lg:gap-2;
@@ -194,10 +194,10 @@ footer {
   @apply grid grid-cols-1 md:grid-cols-2 gap-10 h-screen md:h-[250px] md:max-h-[250px] lg:h-[300px] lg:max-h-[300px] xl:h-[350px] xl:max-h-[350px] xl:gap-28;
 }
 .card-container-5 {
-  @apply grid grid-cols-1 lg:grid-cols-3 space-y-6 lg:space-y-0 lg:gap-7 h-[504px] lg:h-[484px] xl:h-[622px];
+  @apply grid grid-cols-1 lg:grid-cols-3 space-y-4 lg:space-y-0 lg:gap-7 h-[540px] lg:h-[484px] xl:h-[622px];
 }
 .card-container-6 {
-  @apply grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-6 xl:gap-7 h-[131px] lg:h-[484px] xl:h-[622px];
+  @apply grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-6 xl:gap-7 h-[200px] lg:h-[484px] xl:h-[622px];
 }
 .card-container-7 {
   @apply grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-10 xl:gap-28;
@@ -474,14 +474,17 @@ footer {
   @apply w-full h-full;
 }
 .swiper-slide a {
-  @apply flex flex-col md:flex-row gap-6 py-12 px-1;
+  @apply flex flex-col gap-6 pb-6 px-1 mt-20 lg:mt-4 xl:mt-6 md:pb-12 md:pt-0 md:flex-row;
 }
 .swiper-slide img {
   @apply block w-full h-full object-cover;
 }
+.swiper-pagination {
+  @apply flex justify-items-start items-center md:justify-center;
+}
 
 .custom-bullet {
-  @apply inline-block w-[30px] h-[5px] bg-septenary mx-2 rounded-full dark:bg-fifteen;
+  @apply inline-block w-[17px] h-[4px] mx-1 bg-septenary rounded-full md:mx-2 md:w-[30px] md:h-[5px] dark:bg-fifteen;
 }
 .custom-bullet-active {
   @apply bg-secondary dark:bg-quinary;

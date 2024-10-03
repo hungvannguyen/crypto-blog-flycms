@@ -3,8 +3,6 @@
 {% block content %}
 <!-- Main Content -->
 
-<section>
-
 	<section class="section-container">
 		<!-- Breadcrumb -->
 		{% include 'components/breadcrumb.html' with { page:'Category' , title: websiteCategory.title} %}
@@ -142,8 +140,6 @@
 		<!-- End Content 3	 -->
 	</section>
 
-
-</section>
 
 <script type="module">
     import { formatDate } from '{{ link_asset('js/main.js') }}?t={{ time() }}';

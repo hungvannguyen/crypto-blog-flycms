@@ -1,5 +1,5 @@
 body{
-  @apply mx-auto px-4 dark:bg-secondary dark:text-primary lg:px-1;
+  @apply mx-auto dark:bg-secondary dark:text-primary lg:px-1;
 
   font-family: 'Lexend';
 }
@@ -10,27 +10,26 @@ body{
   }
 }
 
-section{
-  @apply mt-0 lg:mt-28 xl:mt-32;
-}
-
 .section{
-
   &-container{
-    @apply max-w-8xl mx-auto mb-10 px-2 lg:mt-20 xl:px-0;
+    @apply max-w-8xl  mx-auto mb-10 px-2 mt-0 lg:mt-16 xl:mt-24 xl:px-0;
   }
 
   &-content{
-    @apply max-w-8xl mx-auto mt-10 lg:mt-14 h-auto;
+    @apply max-w-8xl mx-auto px-3;
   }
 
   &-title{
-    @apply text-lg lg:text-3xl xl:text-4xl text-secondary font-semibold my-8 dark:text-primary;
+    @apply text-lg text-secondary font-semibold my-6 lg:my-16 md:text-3xl xl:text-4xl  dark:text-primary;
 
     &-1{
-      @apply text-lg lg:text-3xl xl:text-4xl text-secondary font-semibold mb-8 dark:text-primary;
+      @apply text-lg my-6 lg:my-16 lg:text-3xl xl:text-4xl text-secondary font-semibold dark:text-primary;
     }
   }
+}
+
+.logo-text{
+  @apply text-sm text-nowrap font-semibold text-secondary lg:text-xl xl:text-2xl dark:text-primary;
 }
 
 

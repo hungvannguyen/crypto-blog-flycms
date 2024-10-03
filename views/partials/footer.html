@@ -4,7 +4,16 @@
 		<div class="footer-top">
 			<div class="footer-logo">
 				<a href="/">
-					<img src="{{ link_asset('images/logo.jpg') }}" alt="Logo">
+					{% set logo = website.getMetaValue('logo') %}
+					{% set siteName = website.getMetaValue('site-name') %}
+
+					<a href="/">
+						{% if logo %}
+						<img src="{{ logo }}" alt="Logo">
+						{% else %}
+						<span class="logo-text">{{ siteName }}</span>
+						{% endif %}
+					</a>
 				</a>
 			</div>
 

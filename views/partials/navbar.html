@@ -2,8 +2,15 @@
 <header x-data="{navMobile:false, navSearch:false, navLang:false }">
 	<nav class="navbar-container">
 		<div class="navbar-logo">
+			{% set logo = website.getMetaValue('logo') %}
+			{% set siteName = website.getMetaValue('site-name') %}
+
 			<a href="/">
-				<img src="{{ link_asset('images/logo.jpg') }}" alt="Logo">
+				{% if logo %}
+				<img src="{{ logo }}" alt="Logo">
+				{% else %}
+				<span class="logo-text">{{ siteName }}</span>
+				{% endif %}
 			</a>
 		</div>
 
