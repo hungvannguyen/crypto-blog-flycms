@@ -10,5 +10,7 @@ set query = multikey_filter_post_query()
 
 {% set posts = multikey_filter_get_posts(query) %}
 <div class="card-container-8">
+
 	{% include 'components/list_card.html' with { resources: posts, resources_card: 'resources_card_8' } %}
+
 </div>

@@ -1,12 +1,16 @@
 {% if resource %}
 <div>
 	{% set thumbnailFile = model_relation(resource, 'thumbnailFile')%}
-<a class="card-wrapper-7" href="{{link_to(resource)}}">
-	<img class="card-image-5" src="{{ thumbnailFile ? image_url(thumbnailFile) : link_asset('images/default-image.jpg') }}" alt="Category Image">
-	<div class="card-content-3">
-		<h3 class="card-title-6">{{resource.title}}</h3>
-		<p class="card-description-3">{{resource.public_posts_count}} articles</p>
-	</div>
-</a>
+
+	<a class="card-wrapper-7" href="{{link_to(resource)}}">
+
+		<img alt="Category Image" class="card-image-5"
+						src="{{ thumbnailFile ? image_url(thumbnailFile) : link_asset('images/default-image.jpg') }}">
+
+		<div class="card-content-3">
+			<h3 class="card-title-6">{{resource.title}}</h3>
+			<p class="card-description-3">{{resource.public_posts_count}} articles</p>
+		</div>
+	</a>
 </div>
 {% endif %}

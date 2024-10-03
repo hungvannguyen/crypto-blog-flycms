@@ -67,7 +67,11 @@ quality: subject.getMetaValue('quality'),
         },
     });
 </script>
+{% if theme.dev_mode %}
 <script src="{{ link_asset('js/main.js') }}?t={{ time() }}" type="module"></script>
+{% else %}
+<script src="{{ link_asset('js/main.min.js') }}?v=9" type="module"></script>
+{% endif %}
 {% include 'components/common_js.html' %}
 </body>
 </html>

@@ -3,24 +3,24 @@
 	<div class="swiper mySwiper" x-data="list('/ajax/top/year', true, 4)">
 		<div class="swiper-wrapper">
 			<template x-for="post in data">
-			<div class="swiper-slide">
-				<a :href="post.url">
-					<div class="banner-image">
-						<img :src="post.thumbnail_file_url || '{{ link_asset('images/default.png') }}'" alt="Slide">
-					</div>
+				<div class="swiper-slide">
+					<a :href="post.url">
+						<div class="banner-image">
+							<img :src="post.thumbnail_file_url || '{{ link_asset('images/default.png') }}'" alt="Slide">
+						</div>
 
-					<div class="banner-information">
-						<h1 class="banner-title" x-text="post.title"></h1>
-						{% for websiteTag in model_relation(post, 'websiteTags') | slice(0,1) %}
-						<a href="{{ link_to(websiteTag) }}"><span>{{ websiteTag.name }}</span></a>
-						{% endfor %}
+						<div class="banner-information">
+							<h1 class="banner-title" x-text="post.title"></h1>
+							{% for websiteTag in model_relation(post, 'websiteTags') | slice(0,1) %}
+							<a href="{{ link_to(websiteTag) }}"><span>{{ websiteTag.name }}</span></a>
+							{% endfor %}
 
-						<p>
-							<span class="banner-date" x-text="formatDate(post.created_at)"></span>
-						</p>
-					</div>
-				</a>
-			</div>
+							<p>
+								<span class="banner-date" x-text="formatDate(post.created_at)"></span>
+							</p>
+						</div>
+					</a>
+				</div>
 			</template>
 		</div>
 		<div class="swiper-pagination"></div>
@@ -28,9 +28,10 @@
 </section>
 
 <script type="module">
-    import { formatDate } from '{{ link_asset('js/main.js') }}?t={{ time() }}';
+    import { formatDate } from '{{ link_asset('js/main.js') }}';
 
     window.formatDate = formatDate;
 </script>
+
 
 <!-- End Banner -->

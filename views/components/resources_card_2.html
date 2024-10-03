@@ -1,8 +1,11 @@
 {% if resource %}
+
 {% set thumbnailFile = model_relation(resource, 'thumbnailFile')%}
 
-<a href="{{link_post(resource)}}" class="card-wrapper-1">
-	<img class="card-image" src="{{ image_url( thumbnailFile ) }}" alt="Slide 1">
+<a class="card-wrapper-1" href="{{link_post(resource)}}">
+
+	<img alt="Slide 1" class="card-image" src="{{ image_url( thumbnailFile ) }}">
+
 	<div class="card-linear"></div>
 	<div class="card-title-1">
 		<p>{{resource.title}}</p>

@@ -1,20 +1,21 @@
 {% if resource %}
+
 {% set thumbnailFile = model_relation(resource, 'thumbnailFile')%}
+
 <div class="card-wrapper-8 col-span-2">
 
-	<img class="card-image" src="{{ image_url( thumbnailFile ) }}" alt="Image">
-	<a href="{{link_post(resource)}}" class="card-linear"></a>
+	<img alt="Image" class="card-image" src="{{ image_url( thumbnailFile ) }}">
+	<a class="card-linear" href="{{link_post(resource)}}"></a>
 
 	<div class="card-info-1">
 		<a href="{{link_post(resource)}}">
 			<p class="card-title">{{resource.title}}</p>
 		</a>
 		{% for websiteTag in model_relation(resource, 'websiteTags') | slice(0,1) %}
-		<a href="{{ link_to(websiteTag) }}" class="card-author-1"><span>{{ websiteTag.name }}</span></a>
+		<a class="card-author-1" href="{{ link_to(websiteTag) }}"><span>{{ websiteTag.name }}</span></a>
 		{% endfor %}
-	  |
+		|
 		<span class="card-date-2">{{ resource.created_at | date("j F Y") }}</span>
 	</div>
 </div>
-
 {% endif %}

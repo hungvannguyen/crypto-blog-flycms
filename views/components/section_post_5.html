@@ -1,16 +1,17 @@
 <!--  Content 5	 -->
 <section class="section-content">
+
 	{% include 'components/section_heading.html' with { title: 'Lasted new of month' } %}
-<div x-data="list('/ajax/top/month', true, 6)">
-	<div class="card-container-11" >
-		<!-- Check if it has data -->
+
+	<div x-data="list('/ajax/top/month', true, 6)">
+		<div class="card-container-11">
+			<!-- Check if it has data -->
 			<template x-for="post in data">
-				<a class="card-wrapper-3" :href="post.url">
-					<img class="card-image-2" :src="post.thumbnail_file_url || '{{ link_asset('images/default.jpg') }}'" alt="Image">
+				<a :href="post.url" class="card-wrapper-3">
+					<img :src="post.thumbnail_file_url || '{{ link_asset('images/default.jpg') }}'" alt="Image" class="card-image-2">
 					<h3 class="card-title-2" x-text="post.title"></h3>
 				</a>
 			</template>
+		</div>
 	</div>
-</div>
-</section>
-<!-- End Content 5	 -->
+</section><!-- End Content 5	 -->

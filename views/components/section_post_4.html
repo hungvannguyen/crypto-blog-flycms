@@ -1,10 +1,13 @@
 <!--  Content 4	 -->
 {% set categories = website_category_all() %}
 <section class="section-content">
+
 	{% include 'components/section_heading.html' with { title: 'Explore Categories' } %}
 
 	<div class="card-container-10">
+
 		{% include 'components/list_card.html' with { resources: categories, resources_card: 'resources_card_5' } %}
+
 	</div>
 </section>
 <!-- End Content 4	 -->
