@@ -109,7 +109,7 @@
 					<div>
 						{% include 'components/section_heading.html' with { title: 'For Further Reference' } %}
 
-						<div class="card-container-9" x-data="list('/ajax/top/month', true, 6)">
+						<div class="card-container-9" x-data="list('/ajax/top/month', true, 2)">
 							<template x-for="post in data">
 							<a class="card-wrapper-6" :href="post.url">
 								<img class="card-image-4" :src="post.thumbnail_file_url || '{{ link_asset('images/default.jpg') }}'" alt="Image">
@@ -129,6 +129,12 @@
 								</div>
 							</a>
 							</template>
+							<div class="text-center my-10">
+								<div x-show="isLoading">
+									{% include 'components/loading.html'%}
+								</div>
+								<button x-bind="trigger" class="btn-view-more">View More</button>
+							</div>
 						</div>
 
 					</div>

@@ -13,5 +13,11 @@
 				</a>
 			</template>
 		</div>
+		<div class="text-center my-10">
+			<div x-show="isLoading">
+				{% include 'components/loading.html'%}
+			</div>
+			<button x-bind="trigger" class="btn-view-more">View More</button>
+		</div>
 	</div>
 </section><!-- End Content 5	 -->

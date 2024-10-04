@@ -16,7 +16,7 @@
   }
 
     &-title{
-        @apply text-xl line-clamp-2 lg:text-4xl xl:text-5xl font-semibold dark:text-primary;
+        @apply text-xl line-clamp-2 leading-normal lg:text-4xl xl:text-5xl font-semibold dark:text-primary;
     }
 
   &-author{

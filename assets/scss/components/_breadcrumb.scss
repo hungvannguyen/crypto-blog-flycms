@@ -1,7 +1,7 @@
 .breadcrumb{
     &-container{
       ol{
-        @apply flex flex-wrap mt-28;
+        @apply flex flex-wrap mt-16 lg:mt-0;
 
         li{
           @apply text-secondary text-sm font-normal after:content-['>'] after:mx-2 after:text-secondary after:last:content-none dark:text-primary dark:after:text-primary;

@@ -12,15 +12,15 @@ body{
 
 .section{
   &-container{
-    @apply max-w-8xl  mx-auto mb-10 px-2 mt-0 lg:mt-16 xl:mt-24 xl:px-0;
+    @apply max-w-8xl mx-auto mb-10 mt-0 lg:mt-16 xl:mt-24 xl:px-0;
   }
 
   &-content{
-    @apply max-w-8xl mx-auto px-3;
+    @apply max-w-8xl mx-auto px-4 md:px-2;
   }
 
   &-title{
-    @apply text-lg text-secondary font-semibold my-6 lg:my-16 md:text-3xl xl:text-4xl  dark:text-primary;
+    @apply text-lg text-secondary font-semibold my-4 lg:my-16 md:text-3xl xl:text-4xl  dark:text-primary;
 
     &-1{
       @apply text-lg my-6 lg:my-16 lg:text-3xl xl:text-4xl text-secondary font-semibold dark:text-primary;

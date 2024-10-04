@@ -7,7 +7,7 @@
     }
 
     &-2{
-        @apply grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-4;
+        @apply grid grid-cols-1 space-y-2 md:space-y-0 md:grid-cols-3 gap-3 lg:gap-4;
     }
 
     &-3{
@@ -56,7 +56,7 @@
     }
 
     &-2{
-        @apply rounded-md p-2 lg:p-4 hover:bg-eleven dark:hover:bg-none overflow-hidden;
+        @apply rounded-md h-fit p-2 lg:p-4 hover:bg-eleven dark:hover:bg-none;
     }
 
     &-3{
@@ -157,7 +157,7 @@
     }
 
     &-5{
-        @apply text-sm flex-1 lg:text-xs-12 xl:text-sm line-clamp-2 text-secondary font-semibold dark:text-primary;
+        @apply text-sm flex-1 lg:text-xs-12 xl:text-base line-clamp-2 text-secondary font-semibold dark:text-primary;
     }
 
     &-6{
@@ -170,14 +170,14 @@
   }
 
   &-description{
-    @apply text-sm text-secondary font-normal dark:text-primary line-clamp-2;
+    @apply text-sm text-secondary font-normal dark:text-primary line-clamp-2 mt-3;
 
     &-1{
         @apply text-base text-secondary font-normal dark:text-primary;
     }
 
     &-2{
-      @apply text-xs font-normal text-secondary line-clamp-2 dark:text-primary;
+      @apply text-sm font-normal text-secondary line-clamp-2 my-1 dark:text-primary;
     }
 
     &-3{
@@ -218,7 +218,7 @@
     }
 
     &-1{
-      @apply flex items-center text-xs gap-2 text-denary dark:text-twelve;
+      @apply flex items-center text-xs-12 gap-2 text-denary dark:text-twelve;
     }
 
     &-2{
