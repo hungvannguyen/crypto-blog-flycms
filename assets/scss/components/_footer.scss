@@ -1,55 +1,51 @@
-footer{
-  @apply bg-nonary py-2 mt-10 lg:mt-20 lg:py-4 dark:bg-tertiary;
+footer {
+  @apply bg-nonary dark:bg-tertiary mt-10 py-2 lg:mt-20 lg:py-4;
 }
 
-.footer{
-
-  &-container{
+.footer {
+  &-container {
     @apply max-w-8xl mx-auto my-8 px-4 lg:px-6 xl:px-4;
   }
 
-  &-top{
-    @apply flex justify-between items-center;
+  &-top {
+    @apply flex items-center justify-between;
   }
 
-  &-bottom{
-    @apply flex flex-col justify-normal mt-4 md:flex-row md:flex-wrap md:justify-evenly lg:gap-4 ;
+  &-bottom {
+    @apply mt-4 flex flex-col justify-normal md:flex-row md:flex-wrap md:justify-evenly lg:gap-4;
 
-    &-item{
-
-      div{
-        @apply flex justify-between items-center;
+    &-item {
+      div {
+        @apply flex items-center justify-between;
       }
 
-      h3{
-        @apply text-lg xl:text-2xl font-semibold text-secondary dark:text-primary my-1;
+      h3 {
+        @apply text-secondary dark:text-primary my-1 text-lg font-semibold xl:text-2xl;
       }
 
-      ul{
+      ul {
         @apply flex flex-col lg:gap-2;
       }
 
-      li{
-        @apply text-base font-thin text-secondary hover:underline dark:text-primary;
+      li {
+        @apply text-secondary dark:text-primary text-base font-thin hover:underline;
       }
-
     }
   }
 
-  &-logo{
-    @apply max-w-[94px] max-h-[40px] lg:max-w-[208px] lg:max-h-[88px] xl:max-w-[270px] xl:max-h-[144px];
+  &-logo {
+    @apply max-h-[40px] max-w-[94px] lg:max-h-[88px] lg:max-w-[208px] xl:max-h-[144px] xl:max-w-[270px];
 
     img {
-      @apply w-full h-full object-cover;
+      @apply h-full w-full object-cover;
     }
   }
 
-  &-social{
+  &-social {
+    @apply my-auto flex gap-4;
 
-    @apply flex gap-4 my-auto;
-
-    &-icon{
-      @apply size-6 text-secondary dark:text-primary;
+    &-icon {
+      @apply text-secondary dark:text-primary size-6;
     }
   }
 }

@@ -10,33 +10,35 @@ body{
   }
 }
 
-.section{
-  &-container{
+.section {
+  &-container {
     @apply max-w-8xl mx-auto mb-10 mt-0 lg:mt-16 xl:mt-24 xl:px-0;
   }
 
-  &-content{
+  &-content {
     @apply max-w-8xl mx-auto px-4 md:px-2;
   }
 
-  &-title{
-    @apply text-lg text-secondary font-semibold my-4 lg:my-16 md:text-3xl xl:text-4xl  dark:text-primary;
+  &-title {
+    @apply text-secondary dark:text-primary my-6 text-lg font-semibold md:text-3xl lg:my-16  xl:text-4xl;
 
-    &-1{
-      @apply text-lg my-6 lg:my-16 lg:text-3xl xl:text-4xl text-secondary font-semibold dark:text-primary;
+    &-1 {
+      @apply text-secondary dark:text-primary my-6 text-lg font-semibold lg:my-16 lg:text-3xl xl:text-4xl;
     }
   }
 }
 
-.logo-text{
-  @apply text-sm text-nowrap font-semibold text-secondary lg:text-xl xl:text-2xl dark:text-primary;
+.logo-text {
+  @apply text-secondary dark:text-primary text-nowrap text-sm font-semibold lg:text-xl xl:text-2xl;
 }
 
-
-.btn{
-  &-view-more{
-    @apply m-auto text-sm text-secondary border-2 border-secondary py-2 px-4 rounded-md hover:bg-secondary hover:text-primary dark:text-primary dark:border-primary dark:hover:text-secondary dark:hover:bg-primary;
+.btn {
+  &-view-more {
+    @apply text-secondary border-secondary hover:bg-secondary hover:text-primary dark:text-primary dark:border-primary dark:hover:text-secondary dark:hover:bg-primary m-auto rounded-md border-2 px-4 py-2 text-sm;
   }
 }
 
+.btn_to_top {
+  @apply bg-secondary dark:bg-primary dark:text-secondary dark:hover:bg-quinary hover:bg-quinary fixed bottom-10 right-10 z-50 h-14 w-14 rounded-full border-0 p-4 text-lg font-semibold text-white shadow-md transition-colors duration-300 hover:animate-bounce;
+}
 

@@ -1,30 +1,30 @@
 .pagination {
   &-container {
-    @apply z-10 flex flex-col sm:flex-row justify-center sm:justify-between mx-auto mt-8 border border-secondary dark:border-primary p-6 gap-4;
+    @apply border-none  z-10 mx-auto mt-8 flex flex-col justify-center gap-4 border p-6 sm:flex-row sm:justify-between;
   }
 
   &-navigation {
-    @apply flex justify-center content-center gap-6 mx-auto;
+    @apply mx-auto flex content-center justify-center gap-6;
   }
 
   &-button {
-    @apply flex items-center justify-center cursor-pointer;
+    @apply flex cursor-pointer items-center justify-center;
   }
 
   &-icon {
-    @apply w-6 h-6;
+    @apply h-6 w-6;
 
     &-container {
-      @apply flex justify-center my-auto text-secondary;
+      @apply text-secondary my-auto flex justify-center;
     }
   }
 
   &-input {
-    @apply flex justify-center content-center gap-4 text-secondary;
+    @apply text-secondary flex content-center justify-center gap-4;
   }
 
   &-item {
-    @apply rounded-full border w-6 h-6 p-4 flex items-center justify-center cursor-pointer font-medium text-secondary hover:bg-quinary hover:text-primary dark:bg-primary dark:hover:bg-quinary dark:hover:text-primary;
+    @apply text-secondary hover:bg-quinary hover:text-primary dark:bg-primary dark:hover:bg-quinary dark:hover:text-primary flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium;
 
     &-active {
       @apply bg-secondary text-primary dark:bg-senary dark:text-secondary;
@@ -36,6 +36,6 @@
   }
 
   &-info {
-    @apply my-auto text-secondary hidden sm:block;
+    @apply text-secondary my-auto hidden sm:block;
   }
 }

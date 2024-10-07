@@ -1,25 +1,25 @@
-.banner{
-  &-image{
-    @apply h-[218px] max-h-[218px] md:w-[329px] md:max-w-[329px] lg:w-[429px] lg:max-w-[429px] lg:h-[244px] lg:max-h-[244px] xl:w-[560px] xl:max-w-[560px] xl:h-[317px] xl:max-h-[317px] object-cover shrink-0 rounded-lg;
+.banner {
+  &-image {
+    @apply h-[218px] max-h-[218px] shrink-0 rounded-lg object-cover md:w-[329px] md:max-w-[329px] lg:h-[244px] lg:max-h-[244px] lg:w-[429px] lg:max-w-[429px] xl:h-[317px] xl:max-h-[317px] xl:w-[560px] xl:max-w-[560px];
 
-    img{
-      @apply w-full h-full object-cover rounded-lg;
+    img {
+      @apply h-full w-full rounded-lg object-cover;
     }
   }
 
-  &-information{
-    @apply flex flex-col space-y-6 justify-between py-2 md:space-y-0 lg:py-4;
+  &-information {
+    @apply flex flex-col justify-between space-y-6 py-1 md:py-2 md:space-y-0 lg:py-4;
 
-    p{
-        @apply text-lg text-denary dark:text-quaternary;
+    p {
+      @apply text-denary dark:text-quaternary text-lg;
     }
   }
 
-    &-title{
-        @apply text-xl line-clamp-2 leading-normal lg:text-4xl xl:text-5xl font-semibold dark:text-primary;
-    }
+  &-title {
+    @apply dark:text-primary line-clamp-4 text-xl font-semibold md:py-1 lg:text-4xl xl:text-5xl;
+  }
 
-  &-author{
+  &-author {
     @apply dark:underline;
   }
 }

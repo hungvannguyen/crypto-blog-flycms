@@ -1,30 +1,29 @@
-header{
-    @apply max-w-8xl mx-auto fixed self-start top-0 left-0 right-0 z-50 ;
-
+header {
+  @apply max-w-8xl fixed left-0 right-0 top-0 z-50 mx-auto self-start;
 }
 
 .navbar {
   &-container {
-    @apply flex bottom-[calc(100vh-theme(spacing.16))] left-0 right-0 top-0 justify-between py-4 px-2 relative bg-primary dark:bg-secondary;
+    @apply bg-primary dark:bg-secondary relative bottom-[calc(100vh-theme(spacing.16))] left-0 right-0 top-0 flex justify-between px-2 py-4;
   }
 
   &-logo {
-    @apply max-w-[71px] max-h-[30px] lg:max-w-[158px] lg:max-h-[66px] xl:max-w-[180px] xl:max-h-[75px];
+    @apply max-h-[30px] max-w-[71px] lg:max-h-[66px] lg:max-w-[158px] xl:max-h-[75px] xl:max-w-[180px];
 
     img {
-      @apply w-full h-full object-cover;
+      @apply h-full w-full object-cover;
     }
   }
 
   &-menu {
-    @apply hidden lg:flex items-center gap-8;
+    @apply hidden items-center gap-8 lg:flex;
 
     &-item {
-      @apply text-base font-medium ;
+      @apply text-base font-medium;
     }
 
     &-button {
-      @apply flex gap-2 items-center hover:text-quinary;
+      @apply hover:text-quinary flex items-center gap-2;
     }
 
     &-icon {
@@ -33,77 +32,75 @@ header{
   }
 
   &-dropdown {
-    @apply absolute bg-primary z-30 top-10 w-full rounded-md gap-4 lg:flex lg:w-36 py-2 shadow-lg dark:bg-octonary dark:border-0 dark:shadow-none;
+    @apply bg-primary dark:bg-octonary absolute top-10 z-30 w-full gap-4 rounded-md py-2 shadow-lg lg:flex lg:w-36 dark:border-0 dark:shadow-none;
 
-    &-search{
-      @apply static bg-primary flex w-full z-30 gap-2 mt-4 rounded-lg lg:absolute lg:w-[264px] lg:right-16 lg:top-12 lg:h-[32px] border-senary border-2 px-1 dark:border-0 dark:bg-octonary;
+    &-search {
+      @apply bg-primary border-senary dark:bg-octonary static z-30 mt-4 flex w-full gap-2 rounded-lg border-2 px-1 lg:absolute lg:right-16 lg:top-12 lg:h-[32px] lg:w-[264px] dark:border-0;
 
-      &-icon{
-        @apply size-6 my-auto cursor-pointer text-senary;
+      &-icon {
+        @apply text-senary my-auto size-6 cursor-pointer;
       }
-      form{
+      form {
         @apply flex w-full;
       }
 
-      input{
-        @apply w-full text-xs text-senary px-2 outline-0 border-none  dark:bg-octonary dark:text-septenary;
+      input {
+        @apply text-senary dark:bg-octonary dark:text-septenary w-full border-none px-2  text-xs outline-none ring-0;
       }
     }
 
-    li{
-        @apply hover:text-quinary;
+    li {
+      @apply hover:text-quinary;
     }
 
-    a{
-      @apply text-xs font-light px-4 pb-2;
+    a {
+      @apply px-4 pb-2 text-xs font-light;
     }
   }
 
-  &-mobile{
+  &-mobile {
+    &-menu {
+      @apply inline-flex items-center justify-center lg:hidden;
 
-    &-menu{
-        @apply lg:hidden inline-flex items-center justify-center;
-
-      &-icon{
-        @apply size-6 text-secondary dark:text-primary;
+      &-icon {
+        @apply text-secondary dark:text-primary size-6;
       }
 
-      &-top{
-        @apply flex mx-2 gap-4;
+      &-top {
+        @apply mx-2 flex gap-4;
       }
 
-      &-bottom{
-        @apply mt-4 mx-2 pb-4 text-secondary;
+      &-bottom {
+        @apply text-secondary mx-2 mt-4 pb-4;
 
-        &-list{
-            @apply flex flex-col gap-4;
+        &-list {
+          @apply flex flex-col gap-4;
         }
 
-        &-toggle{
-            @apply flex justify-between;
+        &-toggle {
+          @apply flex justify-between;
         }
 
-        &-link{
-            @apply text-base font-medium hover:text-quinary dark:text-primary;
+        &-link {
+          @apply hover:text-quinary dark:text-primary text-base font-medium;
         }
 
-        &-submenu{
-            @apply flex flex-col gap-2 rounded-md shadow-lg px-4 py-2 border mt-4 dark:text-primary dark:border-0 dark:bg-octonary;
+        &-submenu {
+          @apply dark:text-primary dark:bg-octonary mt-4 flex flex-col gap-2 rounded-md border px-4 py-2 shadow-lg dark:border-0;
 
-          li{
-            @apply text-sm font-thin dark:text-primary hover:text-quinary;
+          li {
+            @apply dark:text-primary hover:text-quinary text-sm font-thin;
           }
         }
       }
-
     }
 
-    &-icon{
-        @apply size-4 my-auto md:size-5 text-secondary dark:text-primary;
+    &-icon {
+      @apply text-secondary dark:text-primary my-auto size-4 md:size-5;
     }
   }
 }
 
-#mobile-menu{
-  @apply lg:hidden px-1 bg-primary dark:bg-secondary;
+#mobile-menu {
+  @apply bg-primary dark:bg-secondary h-screen px-1 lg:hidden;
 }

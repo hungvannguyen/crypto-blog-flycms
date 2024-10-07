@@ -16,10 +16,9 @@
 				<a href="{{ link_to(websiteTag) }}"><span>{{ websiteTag.name }}</span></a>
 				{% endfor %}
 		</span>
-				|
+				<span>|</span>
 				<span class="card-date">{{ resource.created_at | date("j F Y") }}</span>
 			</p>
 		</div>
 	</a>
-</div>
-{% endif %}
+</div>{% endif %}

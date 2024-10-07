@@ -1,93 +1,101 @@
-.post{
-  &-container{
-    @apply grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10 lg:mt-20 lg:gap-20;
+.post {
+  &-container {
+    @apply mt-10 grid grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-3 lg:gap-20;
   }
 
-  &-wrapper{
+  &-wrapper {
     @apply col-span-2;
 
-    &-1{
-      @apply flex flex-col gap-10 lg:ease-in-out lg:self-start lg:sticky lg:top-28;
+    &-1 {
+      @apply flex flex-col gap-10 lg:sticky lg:top-28 lg:self-start lg:ease-in-out;
     }
   }
 
-  &-title{
-    @apply text-xl lg:text-3xl xl:text-4xl font-semibold text-secondary dark:text-primary;
+  &-title {
+    @apply text-secondary dark:text-primary text-xl font-semibold lg:text-3xl xl:text-4xl;
 
     &-1 {
-      @apply text-lg lg:text-xl xl:text-2xl font-medium text-secondary dark:text-primary;
+      @apply text-secondary dark:text-primary text-lg font-medium lg:text-xl xl:text-2xl;
     }
 
     &-2 {
-      @apply text-lg lg:text-2xl xl:text-3xl mb-6 font-medium text-secondary dark:text-primary;
+      @apply text-secondary dark:text-primary mb-6 text-lg font-medium lg:text-2xl xl:text-3xl;
     }
   }
 
-  &-info{
-    @apply xl:text-xl font-normal flex flex-wrap items-center text-thirteen dark:text-twelve gap-2 mt-10;
+  &-info {
+    @apply text-thirteen dark:text-twelve mt-10 flex flex-wrap items-center gap-2 font-normal xl:text-xl;
   }
 
-  &-avatar{
+  &-avatar {
     @apply size-9 rounded-full;
   }
 
-  &-content{
+  &-content {
     @apply mt-10 md:mt-12;
 
-    &-wrapper{
-        @apply flex flex-col gap-4 md:mt-2;
+    &-wrapper {
+      @apply flex flex-col gap-4 md:mt-2;
 
-      p{
-        @apply text-sm xl:text-base font-normal text-secondary dark:text-primary;
+      p {
+        @apply text-secondary dark:text-primary text-sm font-normal xl:text-base;
       }
 
       h1 {
-        @apply text-lg lg:text-2xl my-3 font-semibold text-secondary dark:text-primary;
+        @apply text-secondary dark:text-primary my-3 text-lg font-semibold lg:text-2xl;
       }
 
       h2 {
-        @apply text-base xl:text-lg font-medium text-secondary dark:text-primary;
+        @apply text-secondary dark:text-primary text-base font-medium xl:text-lg;
       }
 
       h3 {
-        @apply text-base lg:text-lg font-normal text-secondary dark:text-primary;
+        @apply text-secondary dark:text-primary text-base font-medium lg:text-lg;
       }
 
-      blockquote{
-        @apply text-sm lg:text-base italic font-normal text-secondary dark:text-primary border-l-4 py-2 md:py-4 border-quinary bg-twelve rounded pl-4 dark:bg-thirteen;
+      h4 {
+        @apply text-secondary dark:text-primary text-base font-medium lg:text-lg;
+      }
+
+      h5 {
+        @apply text-secondary dark:text-primary text-base font-medium lg:text-lg;
+      }
+
+      blockquote {
+        @apply text-secondary dark:text-primary border-quinary bg-twelve dark:bg-thirteen rounded border-l-4 py-2 pl-4 pr-2 text-sm font-normal italic md:py-4 lg:text-base;
       }
     }
   }
 
-  &-image{
-    @apply w-full h-full mx-auto object-cover overflow-hidden rounded-lg max-h-[425px];
+  &-image {
+    @apply mx-auto h-full max-h-[425px] w-full overflow-hidden rounded-lg object-cover;
   }
 
-  &-social{
-   &-container{
-      @apply flex flex-wrap gap-4 my-6;
+  &-social {
+    &-container {
+      @apply my-6 flex flex-wrap gap-4;
     }
 
-    &-icon{
-      @apply size-6 text-thirteen dark:text-quaternary;
-    }
-  }
-
-  &-like{
-    &-container{
-        @apply flex items-center gap-2;
-    }
-
-    &-icon{
-      @apply size-8 text-secondary dark:text-primary;
-    }
-
-    &-text{
-        @apply text-base font-light text-thirteen dark:text-twelve ;
+    &-icon {
+      @apply text-thirteen dark:text-quaternary size-6;
     }
   }
 
-  &-tag{
-    @apply text-sm px-2 py-1 rounded font-normal text-primary bg-senary;
+  &-like {
+    &-container {
+      @apply flex items-center gap-2;
+    }
+
+    &-icon {
+      @apply text-secondary dark:text-primary size-8;
+    }
+
+    &-text {
+      @apply text-thirteen dark:text-twelve text-base font-light;
+    }
+  }
+
+  &-tag {
+    @apply text-primary bg-senary rounded px-2 py-1 text-sm font-normal;
   }
 }
