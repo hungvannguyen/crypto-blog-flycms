@@ -3,7 +3,7 @@
 	<div class="footer-container">
 		<div class="footer-top">
 			<div class="footer-logo">
-				<a href="/">
+
 					{% set logo = website.getMetaValue('logo') %}
 					{% set siteName = website.getMetaValue('site-name') %}
 
@@ -14,7 +14,7 @@
 						<span class="logo-text">{{ siteName }}</span>
 						{% endif %}
 					</a>
-				</a>
+
 			</div>
 
 			<div class="footer-social">
@@ -47,7 +47,9 @@
 			{% if not menuItem.items %}
 			<div class="footer-bottom-item">
 				<div>
-					<h3>{{ menuItem.text }}</h3>
+					<a href="{{ menuItem.link }}" target="{{ menuItem.new_tab ? '_blank' : '' }}">
+						<h3>{{ menuItem.text }}</h3>
+					</a>
 				</div>
 			</div>
 			{% else %}
