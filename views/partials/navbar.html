@@ -149,7 +149,7 @@
 				{% for menuItem in mainMenu %}
 				{% if not menuItem.items %}
 				<li class="navbar-mobile-menu-bottom-item">
-					<a class="navbar-mobile-menu-bottom-link" href="/category.html"> {{ menuItem.text }}</a>
+					<a class="navbar-mobile-menu-bottom-link" href="{{ menuItem.link }}"> {{ menuItem.text }}</a>
 				</li>
 				{% else %}
 				<li class="navbar-mobile-menu-bottom-item" x-data="{ navMenu: false }">
