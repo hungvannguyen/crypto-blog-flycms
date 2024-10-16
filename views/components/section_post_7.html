@@ -1,3 +1,5 @@
+{% if not search %}
+
 {%
 set query = multikey_filter_post_query()
 .where('visibility', '=', 'public')
@@ -9,8 +11,13 @@ set query = multikey_filter_post_query()
 
 {% set posts = multikey_filter_get_posts(query) %}
 
+{% endif %}
 <div class="card-container-2">
 
+	{% if not search %}
 	{% include 'components/list_card.html' with { resources: posts, resources_card: 'resources_card_3' } %}
+	{% else %}
+	{% include 'components/list_card.html' with { resources: search, resources_card: 'resources_card_3' } %}
+	{% endif %}
 
 </div>

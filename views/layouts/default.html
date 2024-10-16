@@ -36,7 +36,13 @@ quality: subject.getMetaValue('quality'),
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ pageTitle }}</title>
+
+	{% if theme.dev_mode %}
 	<link href="{{ link_asset('css/style.min.css') }}?t={{ time() }}" rel="stylesheet" type="text/css"/>
+	{% else %}
+	<link href="{{ link_asset('css/style.min.css') }}?v=9" rel="stylesheet" type="text/css"/>
+	{% endif %}
+
 	<link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 	/>

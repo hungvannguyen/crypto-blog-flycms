@@ -13,13 +13,11 @@
 
 			{% include 'components/section_heading.html' with { title: 'Search result for: ' ~ keywords } %}
 
-			{% include 'components/section_post_7.html' with { id: websiteTag.id } %}
-
-			{% set count = listData.getResourcesCount() %}
+			{% include 'components/section_post_7.html' with { search: posts } %}
 
 			<div>
 
-				{% include 'components/pagination_tailwind.html' with { count: count } %}
+				{% include 'components/pagination_tailwind.html' with { count: postsCount } %}
 
 			</div>
 		</section>
